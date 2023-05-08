@@ -371,7 +371,7 @@ var InfiniteScroll = (function (React) {
         };
         InfiniteScroll.prototype.componentDidUpdate = function (prevProps) {
             // do nothing when dataLength is unchanged
-            if (this.props.dataLength === prevProps.dataLength)
+            if (this.props.dataLength === prevProps.dataLength || this.props.dataLength === 0)
                 return;
             var fetchAgain = this._infScroll &&
                 this._scrollableNode &&

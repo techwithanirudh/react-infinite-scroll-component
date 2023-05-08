@@ -141,7 +141,7 @@ export default class InfiniteScroll extends Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     // do nothing when dataLength is unchanged
-    if (this.props.dataLength === prevProps.dataLength) return;
+    if (this.props.dataLength === prevProps.dataLength || this.props.dataLength === 0) return;
 
     const fetchAgain =
       this._infScroll &&
