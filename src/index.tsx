@@ -146,7 +146,8 @@ export default class InfiniteScroll extends Component<Props, State> {
     const fetchAgain =
       this._infScroll &&
       this._scrollableNode &&
-      this._scrollableNode.clientHeight * 1.1 > this._infScroll.scrollHeight;
+      this._scrollableNode.clientHeight * 1.1 > this._infScroll.scrollHeight &&
+      this.props.hasMore;;
     if (fetchAgain) {
       this.actionTriggered = true;
       this.setState({ showLoader: true });
